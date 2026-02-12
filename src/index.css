@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy;
+  color:#fff ;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body{
+  background-color: #111;
+  padding: 50px;
+}
+.box{
+  background-color: crimson;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+}
