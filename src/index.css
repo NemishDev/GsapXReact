@@ -15,9 +15,21 @@ body{
   background-color: #111;
   padding: 50px;
 }
-.box{
-  background-color: crimson;
+
+
+
+.box {
+  background: linear-gradient(to right bottom, rgb(250, 88, 121), rgb(226, 9, 52));
   height: 300px;
   width: 300px;
   border-radius: 10px;
+  margin: 20px;
+}
+
+.circle {
+  background: linear-gradient(to right bottom, lightblue, cadetblue);
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+   margin: 20px;
 }
