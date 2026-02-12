@@ -1,29 +1,29 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 const App = () => {
 
- useGSAP(function(){
-  gsap.to(".box",{
-    rotate:360,
-    duration:1.5,
-    delay:1
-  })
- }, {scope:'.container1'})
+  const [xMove, setXMove]=useState(0)
+ const random=gsap.utils.random(-500,500,100) // min , max, range-gap
 
-  return (
-    <main>
-     <div className="container1">
-       <div className="box"></div>
-       <div className="circle"></div>
-     </div>
-     <div className="container2">
-       <div className="box"></div>
-       <div className="circle"></div>
-     </div>
-    </main>
-  )
+  const boxRef=useRef(null)
+
+  useGSAP(()=>{
+    gsap.to(boxRef.current,{
+      x:xMove,
+      duration:1,
+    })
+  },[xMove]) // ye dependency hai  
+return(
+  <main>
+    <button onClick={()=>{
+      setXMove(random)
+    }}>Animate Button</button>
+    <div ref={boxRef} className="box"></div>
+  </main>
+)
+ 
 }
 
 export default App
